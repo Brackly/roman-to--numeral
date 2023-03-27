@@ -10,6 +10,8 @@ def roman_to_integer(s: str) -> int:
         curr_value = roman_map[char]
         if curr_value > prev_value:
             integer_value += curr_value - 2*prev_value
+        elif char != 'I':
+            return "The roman numeral is invalid"
         else:
             integer_value += curr_value
         prev_value = curr_value
