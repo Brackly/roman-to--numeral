@@ -1,6 +1,6 @@
 import pytest
 
-from roman_to_integer import roman_to_integer
+from roman import roman_to_integer
 
 def test_roman_to_integer():
     assert roman_to_integer('I') == 1
@@ -20,8 +20,7 @@ def test_roman_to_integer():
     assert roman_to_integer('MMXIV') == 2014
 
 def test_roman_to_integer_invalid_input():
-    with pytest.raises(KeyError):
-        roman_to_integer('Z')
+    assert roman_to_integer('Z') == "The roman numeral is invalid"
     with pytest.raises(TypeError):
         roman_to_integer(123)
     with pytest.raises(TypeError):
